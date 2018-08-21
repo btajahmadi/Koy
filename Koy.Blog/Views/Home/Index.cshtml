@@ -1,0 +1,14 @@
+﻿@using System.Security.Claims
+@{
+    ViewData["Title"] = "Index";
+}
+@if (!User.Identities.Any(u => u.IsAuthenticated))
+{
+    <h2>Hello World</h2>
+}
+else
+{
+    <h3>@User.Identities.First(u => u.IsAuthenticated && u.HasClaim(c => c.Type == ClaimTypes.Name)).FindFirst(ClaimTypes.Name).Value</h3>
+}
+<h2>Index</h2>
+
