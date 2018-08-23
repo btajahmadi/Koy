@@ -6,6 +6,7 @@
 
   <ItemGroup>
     <PackageReference Include="RavenDB.Client" Version="4.0.6" />
+    <PackageReference Include="RavenDB.Identity" Version="4.3.0" />
   </ItemGroup>
 
   <ItemGroup>
