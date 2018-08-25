@@ -62,7 +62,7 @@ namespace Koy.Blog
                 routes.MapRoute(
                     name: "random_BlogPost",
                     template: "Blog/RandomArticle",
-                    defaults: new { controller = "Blog", action = "ReadRandomBlogPost" });
+                    defaults: new { controller = "Blog", action = "ReadRandomPost" });
                 routes.MapRoute(
                     name: "blog",
                     template: "Blog/{*BlogPost}",

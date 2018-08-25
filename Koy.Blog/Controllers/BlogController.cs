@@ -16,11 +16,11 @@ namespace Koy.Blog.Controllers
         {
             _BlogPostRepository = BlogPostRepository;
         }
-        public async Task<IActionResult> ReadRandomBlogPost()
+        public async Task<IActionResult> ReadRandomPost()
         {
-            return View(nameof(ReadBlogPost), await _BlogPostRepository.RandomBlogPost());
+            return View(nameof(ReadPost), await _BlogPostRepository.RandomBlogPost());
         }
-        public async Task<IActionResult> ReadBlogPost()
+        public async Task<IActionResult> ReadPost()
         {
             var BlogPostTitle = RouteData.Values["BlogPost"]?.ToString() ?? "";
             return View(await _BlogPostRepository.FindBlogPostByTitle("How to fuck your ass"));
