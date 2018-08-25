@@ -10,20 +10,20 @@ namespace Koy.Blog.Controllers
 {
     public class BlogController : Controller
     {
-        private readonly IArticleRepository _articleRepository;
+        private readonly IBlogPostRepository _BlogPostRepository;
 
-        public BlogController(IArticleRepository articleRepository)
+        public BlogController(IBlogPostRepository BlogPostRepository)
         {
-            _articleRepository = articleRepository;
+            _BlogPostRepository = BlogPostRepository;
         }
-        public async Task<IActionResult> ReadRandomArticle()
+        public async Task<IActionResult> ReadRandomBlogPost()
         {
-            return View(nameof(ReadArticle), await _articleRepository.RandomArticle());
+            return View(nameof(ReadBlogPost), await _BlogPostRepository.RandomBlogPost());
         }
-        public async Task<IActionResult> ReadArticle()
+        public async Task<IActionResult> ReadBlogPost()
         {
-            var articleTitle = RouteData.Values["article"]?.ToString() ?? "";
-            return View(await _articleRepository.FindArticleByTitle("How to fuck your ass suddenly!"));
+            var BlogPostTitle = RouteData.Values["BlogPost"]?.ToString() ?? "";
+            return View(await _BlogPostRepository.FindBlogPostByTitle("How to fuck your ass"));
         }
     }
 }

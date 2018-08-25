@@ -7,7 +7,7 @@ using System.Xml.Serialization;
 namespace Koy.Blog.Data.Seeding.Models
 {
     [XmlRoot]
-    internal class Article
+    internal class BlogPost
     {
         [XmlAttribute]
         public int Id { get; set; }

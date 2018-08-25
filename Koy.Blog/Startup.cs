@@ -42,7 +42,7 @@ namespace Koy.Blog
                     options.LoginPath = "/Account/Login";
                     options.LogoutPath = "/Account/Logout";
                 });
-            services.AddTransient<IArticleRepository, ArticleRepository>();
+            services.AddScoped<IBlogPostRepository, BlogPostRepository>();
             services.AddMvc();
         }
 
@@ -60,13 +60,13 @@ namespace Koy.Blog
             {
                 //routes.MapRoute(name: "version", template: "version");
                 routes.MapRoute(
-                    name: "random_article",
-                    template: "Blog/RandomArticle",
-                    defaults: new { controller = "Blog", action = "ReadRandomArticle" });
+                    name: "random_BlogPost",
+                    template: "Blog/RandomBlogPost",
+                    defaults: new { controller = "Blog", action = "ReadRandomBlogPost" });
                 routes.MapRoute(
                     name: "blog",
-                    template: "Blog/{*article}",
-                    defaults: new { controller = "Blog", action= "ReadArticle"}
+                    template: "Blog/{*BlogPost}",
+                    defaults: new { controller = "Blog", action= "ReadBlogPost"}
                     );
                 routes.MapRoute(
                     name: "default", 

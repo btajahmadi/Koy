@@ -11,13 +11,13 @@ namespace Koy.Blog.Data.Seeding
 {
     public class SeedProvider
     {
-        public void Articles()
+        public void BlogPosts()
         {
-            var xmlSerializer = new XmlSerializer(typeof(List<Article>));
-            var reader = new StreamReader("Articles.xml");
+            var xmlSerializer = new XmlSerializer(typeof(List<BlogPost>));
+            var reader = new StreamReader("BlogPosts.xml");
 
-            var articles = new List<Article>();
-            articles = (List<Article>)xmlSerializer.Deserialize(reader);
+            var BlogPosts = new List<BlogPost>();
+            BlogPosts = (List<BlogPost>)xmlSerializer.Deserialize(reader);
             reader.Close();
         }
     }
