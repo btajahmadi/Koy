@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Koy.Blog.Core.Interfaces;
+using Koy.Blog.Core.Models.BlogPostAggregate;
 using Koy.Blog.Data;
 using Koy.Blog.Data.Repositories;
 using Microsoft.AspNetCore.Authentication.Cookies;
@@ -28,6 +29,9 @@ namespace Koy.Blog
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
+            //services.Configure<BlogPostSettings>(Configuration.GetSection("BlogPostSettings"));
+            //services.AddOptions();
+
             var documentStore = new DocumentStore()
             {
                 Urls = new string[] { "http://127.0.0.1:8081" },

@@ -1,4 +1,5 @@
 ﻿using Koy.Blog.Core.Models;
+using Koy.Blog.Core.Models.BlogPostAggregate;
 using System;
 using System.Collections.Generic; 
 using System.Text;
@@ -10,6 +11,7 @@ namespace Koy.Blog.Core.Interfaces
     {
         Task<IEnumerable<BlogPost>> AllBlogPosts();
         Task<BlogPost> RandomBlogPost();
-        Task<BlogPost> FindBlogPostByTitle(string title);
+        Task<BlogPost> BlogPostWithTitle(string title);
+        Task AddBlogPost(BlogPost blogPost);
     }
 }

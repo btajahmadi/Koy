@@ -14,5 +14,14 @@ namespace Koy.SharedKernel.Utilities
             var randomNumber = randomizer.Next(list.Count);
             return list[randomNumber];
         }
+
+        public static bool IsBlank(this string s)
+        {
+            return String.IsNullOrEmpty(s);
+        }
+        public static bool LengthIsLessThan(this string s, int length)
+        {
+            return s.Length < length ? true : false;
+        }
     }
 }
